@@ -61,3 +61,27 @@ CREATE TABLE `transaction` (
 insert into stock value(1, 'cow', 100);
 insert into stock value(2, 'buffalo', 100);
 insert into stock value(3, 'camel', 100);
+
+
+
+
+
+Now got to the mysql connector link and download platform independent zip file  :
+https://dev.mysql.com/downloads/connector/j/
+
+![Screenshot 2021-05-05 140312](https://user-images.githubusercontent.com/72779637/117115350-dd2b1600-ad41-11eb-91ee-4e72e7d03c6d.png)
+
+extract the zip file into any location . 
+
+then open your project folder inside the netbeans (prefferable netbeans as it contains javafx and you need not to install it ) .
+go to libraries
+
+![image](https://user-images.githubusercontent.com/72779637/117115579-24190b80-ad42-11eb-950a-4ad29122b074.png)
+
+right click and go to add JAR/folder
+
+navigate to the extracted zip folder and inside it you wil find mysql connector add it . 
+
+![image](https://user-images.githubusercontent.com/72779637/117115789-70644b80-ad42-11eb-8b44-2a47857f7c68.png)
+
+Now build the project and run it !!!!!
