@@ -50,7 +50,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
     private void deleteStaff(ActionEvent event) throws ClassNotFoundException, SQLException {
             Staff st=(Staff)staff_table.getSelectionModel().getSelectedItems().get(0);        
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("delete from staff where staffid = ?");
             insert.setString(1,st.getId());
             insert.executeUpdate();
@@ -79,7 +79,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
         String str=gender.getSelectionModel().getSelectedItem().toString();
         String date = datepicker.getValue().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             
             insert=con1.prepareStatement("insert into staff values(?,?,?,?,?,?)");
             insert.setString(1,id.getText());
@@ -107,7 +107,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
         table_address.setCellValueFactory(new PropertyValueFactory<>("address"));
         ObservableList<Staff> products=FXCollections.observableArrayList();
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con2=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con2=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert1=con2.prepareStatement("select * from staff");
             ResultSet rs1=insert1.executeQuery();
             while(rs1.next()){
@@ -148,7 +148,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
           
           if(staff.getName()!="0"){
               Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
     
               insert=con1.prepareStatement("update staff set name=? where staffid=?");
               insert.setString(1,staff.getName());
@@ -158,7 +158,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
           
           if(staff.getAddress()!="0"){
               Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
     
               insert=con1.prepareStatement("update staff set address=? where staffid=?");
               insert.setString(1,staff.getAddress());
@@ -168,7 +168,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
           
           if(staff.getContact()!="0"){
               Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
     
               insert=con1.prepareStatement("update staff set contact=? where staffid=?");
               insert.setString(1,staff.getContact());
@@ -178,7 +178,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
           
           if(staff.getDate()!="0"){
               Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
               insert=con1.prepareStatement("update staff set date=? where staffid=?");
               insert.setString(1,staff.getDate());
               insert.setString(2,staff.getId());
@@ -187,7 +187,7 @@ public class FXMLDocumentControllerPurchase implements Initializable {
           
           if(staff.getGender()!="0"){
               Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
               insert=con1.prepareStatement("update staff set gender=? where staffid=?");
               insert.setString(1,staff.getGender());
               insert.setString(2,staff.getId());

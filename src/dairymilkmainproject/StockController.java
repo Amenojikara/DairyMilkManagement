@@ -60,7 +60,7 @@ public class StockController implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             
             insert=con1.prepareStatement("select * from stock");
             ResultSet rs1=insert.executeQuery();

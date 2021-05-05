@@ -65,7 +65,7 @@ public class TransactionController implements Initializable {
             
             ObservableList<transaction> products=FXCollections.observableArrayList();
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("select * from transaction");
             ResultSet rs1=insert.executeQuery();
             
@@ -94,7 +94,7 @@ public class TransactionController implements Initializable {
        Connection con1;
        PreparedStatement insert;
        Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("select * from transaction where date=?");
             
             insert.setString(1,selectedDate);

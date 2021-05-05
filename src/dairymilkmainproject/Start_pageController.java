@@ -15,7 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -27,12 +29,25 @@ public class Start_pageController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    TextField txt;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        System.out.println(MysqlPassword.password);
     }    
     
-    
+    @FXML
+    public void updatePassword(ActionEvent event){
+        String s=txt.getText();
+        if(s==null){
+            JOptionPane.showMessageDialog(null,"enter your mysql password");
+        }
+        else{
+            MysqlPassword.setPassword(s);
+        }
+        }
     
     @FXML
     public void goToTransaction(ActionEvent event) throws IOException{

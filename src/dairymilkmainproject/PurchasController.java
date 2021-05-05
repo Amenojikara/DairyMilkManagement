@@ -55,7 +55,7 @@ public class PurchasController implements Initializable {
         Connection con1;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("select * from purchase");
             ResultSet rs1=insert.executeQuery();
             
@@ -73,7 +73,7 @@ public class PurchasController implements Initializable {
         Connection con;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con.prepareStatement("select staffid from staff");
             ResultSet rs=insert.executeQuery();
             boolean flag=false;
@@ -96,7 +96,7 @@ public class PurchasController implements Initializable {
         Connection con1;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             
             insert=con1.prepareStatement("insert into purchase values(?,?,?,?,?,?,?,?,?,?)");
             
@@ -153,7 +153,7 @@ public class PurchasController implements Initializable {
         Connection con;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con.prepareStatement("select * from transaction");
             ResultSet rs=insert.executeQuery();
             int temp=0;
@@ -188,7 +188,7 @@ public class PurchasController implements Initializable {
         
         ObservableList<Purchase> products=FXCollections.observableArrayList();
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("select * from purchase");
             ResultSet rs1=insert.executeQuery();
             while(rs1.next()){
@@ -205,7 +205,7 @@ public class PurchasController implements Initializable {
         PreparedStatement insert;
         Purchase st=(Purchase)purchase_table.getSelectionModel().getSelectedItems().get(0);        
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("delete from purchase where id = ?");
             insert.setInt(1,st.getId());
             insert.executeUpdate();

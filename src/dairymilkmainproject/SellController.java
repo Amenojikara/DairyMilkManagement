@@ -64,7 +64,7 @@ public TableColumn table_id,table_qty,table_staffid,table_date,table_dealerName,
          Connection con1;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("select * from sellmilk");
             ResultSet rs1=insert.executeQuery();
             int temp=0;
@@ -81,7 +81,7 @@ public TableColumn table_id,table_qty,table_staffid,table_date,table_dealerName,
         Connection con;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con.prepareStatement("select staffid from staff");
             ResultSet rs=insert.executeQuery();
             boolean flag=false;
@@ -103,7 +103,7 @@ public TableColumn table_id,table_qty,table_staffid,table_date,table_dealerName,
         Connection con1;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             
             insert=con1.prepareStatement("insert into sellmilk values(?,?,?,?,?,?,?,?)");
             
@@ -160,7 +160,7 @@ public TableColumn table_id,table_qty,table_staffid,table_date,table_dealerName,
         Connection con;
         PreparedStatement insert;
         Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con.prepareStatement("select * from transaction");
             ResultSet rs=insert.executeQuery();
             int temp=0;
@@ -191,7 +191,7 @@ public TableColumn table_id,table_qty,table_staffid,table_date,table_dealerName,
         
         ObservableList<SellMilk> products=FXCollections.observableArrayList();
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("select * from sellmilk");
             ResultSet rs1=insert.executeQuery();
             while(rs1.next()){
@@ -209,7 +209,7 @@ public TableColumn table_id,table_qty,table_staffid,table_date,table_dealerName,
         PreparedStatement insert;
         SellMilk st=(SellMilk)sell_table.getSelectionModel().getSelectedItems().get(0);        
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root","Ayan@0904");
+            con1=DriverManager.getConnection("jdbc:mysql://localhost/dairyMilk","root",MysqlPassword.password);
             insert=con1.prepareStatement("delete from sellmilk where id = ?");
             insert.setInt(1,st.getId());
             insert.executeUpdate();
